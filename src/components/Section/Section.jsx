@@ -1,30 +1,22 @@
+import PropTypes from 'prop-types';
 import { Component } from 'react';
-import { FeedbackOptions } from './FeedbackOptions/FeedbackOptions';
-import { Statistics } from './Statistics/Statistics';
 
 class Section extends Component {
   render() {
-    const {
-      good,
-      neutral,
-      bad,
-      countTotalFeedback,
-      countPositiveFeedbackPercentage,
-    } = this.props;
+    const { title, children } = this.props;
     return (
       <>
-        <FeedbackOptions />
-
-        <Statistics
-          good={good}
-          neutral={neutral}
-          bad={bad}
-          countTotalFeedback={countTotalFeedback}
-          countPositiveFeedbackPercentage={countPositiveFeedbackPercentage}
-        />
+        <section>
+          <h2>{title}</h2>
+          {children}
+        </section>
       </>
     );
   }
 }
 
 export { Section };
+
+Section.propTypes = {
+  title: PropTypes.string.isRequired,
+};
