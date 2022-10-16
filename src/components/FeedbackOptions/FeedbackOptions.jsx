@@ -1,15 +1,15 @@
 import PropTypes from 'prop-types';
 
-const FeedbackOptions = ({ onLeaveFeedback, options }) => {
+const FeedbackOptions = ({ onLeaveFeedback }) => {
   return (
     <>
-      <button onClick={() => onLeaveFeedback(1)} type="button">
+      <button name="good" onClick={onLeaveFeedback} type="button">
         Good
       </button>
-      <button onClick={() => onLeaveFeedback(2)} type="button">
+      <button name="neutral" onClick={onLeaveFeedback} type="button">
         Neutral
       </button>
-      <button onClick={() => onLeaveFeedback(3)} type="button">
+      <button name="bad" onClick={onLeaveFeedback} type="button">
         Bad
       </button>
     </>
