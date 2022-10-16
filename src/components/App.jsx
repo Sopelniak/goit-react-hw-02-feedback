@@ -20,11 +20,7 @@ class App extends Component {
   };
 
   countPositiveFeedbackPercentage = (goodValue, countTotalFeedback) => {
-    if (countTotalFeedback(this.state) !== 0) {
-      return ((goodValue / countTotalFeedback(this.state)) * 100).toFixed(0);
-    } else {
-      return '-';
-    }
+    return ((goodValue / countTotalFeedback(this.state)) * 100).toFixed(0);
   };
 
   onLeaveFeedback = e => {
